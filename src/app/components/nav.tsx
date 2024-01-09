@@ -5,12 +5,17 @@ export default function Nav() {
         <li className="text-[#333333] font-bold">My Blog</li>
       </ul>
       <ul className="flex gap-16">
-        <li>Blog</li>
         <li>
-          <button>Log in</button>
+          <button>Home</button>
         </li>
         <li>
-          <button>Sign Up</button>
+          <button>Blogs</button>
+        </li>
+        <li>
+          <button>Write</button>
+        </li>
+        <li>
+          <button>Log in</button>
         </li>
       </ul>
     </nav>

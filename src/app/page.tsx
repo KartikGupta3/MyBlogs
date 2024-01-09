@@ -1,5 +1,5 @@
-import AllBlogs from "./components/AllBlogs";
+import WriteBlog from "./components/WriteBlog";
 
 export default function Home() {
-  return <AllBlogs />;
+  return <WriteBlog />;
 }
