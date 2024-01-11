@@ -1,5 +1,11 @@
-import WriteBlog from "./components/WriteBlog";
+import MainPage from "./components/MainPage";
+import Nav from "./components/nav";
 
 export default function Home() {
-  return <WriteBlog />;
+  return (
+    <>
+      <Nav />
+      <MainPage />
+    </>
+  );
 }

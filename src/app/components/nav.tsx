@@ -6,9 +6,8 @@ interface NavItemProps {
 
 export default function Nav() {
   return (
-    <nav className="flex justify-between items-center bg-white p-4 shadow-md">
-      <div className="text-2xl font-bold text-gray-800">MyUniverse</div>
-
+    <nav className="flex justify-between items-center bg-white p-4">
+      <div className="text-2xl font-bold text-gray-800">Kartik Gupta</div>
       <ul className="flex gap-8">
         <NavItem>Home</NavItem>
         <NavItem>Blogs</NavItem>
