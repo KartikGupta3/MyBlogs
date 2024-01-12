@@ -37,7 +37,7 @@ export default function MainPage() {
                           <path
                             d="M7 17L17 7M17 7H7M17 7V17"
                             stroke="#1A1A1A"
-                            stroke-width="2"
+                            strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           />
@@ -165,7 +165,7 @@ export default function MainPage() {
                         <path
                           d="M7 17L17 7M17 7H7M17 7V17"
                           stroke="#1A1A1A"
-                          stroke-width="2"
+                          strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
