@@ -1,11 +1,9 @@
-import AllBlogs from "./components/AllBlogs";
-import Nav from "./components/nav";
+import Login from "@/components/Login";
 
 export default function Home() {
   return (
     <>
-      <Nav />
-      <AllBlogs />
+      <Login />
     </>
   );
 }
