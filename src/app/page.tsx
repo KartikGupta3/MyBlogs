@@ -1,10 +1,9 @@
-import Login from "@/components/Login";
-import ReadBlog from "@/components/ReadBlog";
+import WriteBlog from "@/components/WriteBlog";
 
 export default function Home() {
   return (
     <>
-      <ReadBlog />
+      <WriteBlog />
     </>
   );
 }

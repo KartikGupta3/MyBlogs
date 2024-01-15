@@ -1,6 +1,45 @@
+"use client";
 import Nav from "./nav";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import "react-quill/dist/quill.snow.css";
 
+const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
 export default function WriteBlog() {
+  const [content, setContent] = useState("");
+  const quillModules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["link", "image"],
+      [{ align: [] }],
+      [{ color: [] }],
+      ["code-block"],
+      ["clean"],
+    ],
+  };
+
+  const quillFormats = [
+    "header",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
+    "link",
+    "image",
+    "align",
+    "color",
+    "code-block",
+  ];
+
+  const handleEditorChange = (newContent: any) => {
+    setContent(newContent);
+  };
+
   return (
     <div className="bg-[#FAFAFA]">
       <Nav />
@@ -30,16 +69,6 @@ export default function WriteBlog() {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="blogContent" className="text-lg mb-1">
-              Blog Content
-            </label>
-            <textarea
-              id="blogContent"
-              placeholder="Share your thoughts..."
-              className="p-3 border border-gray-300 rounded-md"
-            ></textarea>
-          </div>
-          <div className="flex flex-col">
             <label htmlFor="image" className="text-lg mb-1">
               Image URL
             </label>
@@ -49,6 +78,20 @@ export default function WriteBlog() {
               placeholder="Paste your image URL..."
               className="p-3 border border-gray-300 rounded-md"
             />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="blogContent" className="text-lg mb-1">
+              Blog Content
+            </label>
+            <div className="h-full">
+              <QuillEditor
+                value={content}
+                onChange={handleEditorChange}
+                modules={quillModules}
+                formats={quillFormats}
+                className="w-full"
+              />
+            </div>
           </div>
           <button
             type="submit"
