@@ -1,9 +1,9 @@
-import WriteBlog from "@/components/WriteBlog";
+import Cover from "@/components/Cover";
 
 export default function Home() {
   return (
     <>
-      <WriteBlog />
+      <Cover />
     </>
   );
 }

@@ -1,10 +1,12 @@
 export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-200">
-      <div className="w-full max-w-md p-6 space-y-8">
-        <h1 className="text-3xl font-bold font-serif text-center text-gray-800 mb-6">Login</h1>
+      <div className="w-full max-w-md p-6 space-y-8 bg-white rounded-md shadow-md">
+        <h1 className="text-3xl font-bold font-serif text-center text-gray-800 mb-6">
+          Login
+        </h1>
 
-        <button className="w-full py-3 px-4 bg-white text-white rounded-md flex items-center justify-center space-x-2">
+        <button className="w-full py-3 px-4 bg-white text-gray-800 rounded-md flex items-center justify-center space-x-2 border border-gray-300 focus:outline-none hover:shadow-md">
           <svg
             width="20"
             height="20"
@@ -30,6 +32,7 @@ export default function Login() {
               fill="#1976D2"
             />
           </svg>
+          <p className="text-base font-semibold">Sign in with Google</p>
         </button>
       </div>
     </div>
