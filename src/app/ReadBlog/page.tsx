@@ -1,4 +1,4 @@
-import Train from "./Images/TrainImage.png";
+import Train from "@/components/Images/TrainImage.png";
 import Image from "next/image";
 
 export default function ReadBlog() {

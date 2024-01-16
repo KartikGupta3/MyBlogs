@@ -1,5 +1,4 @@
 "use client";
-import Nav from "./nav";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import "react-quill/dist/quill.snow.css";
@@ -41,9 +40,8 @@ export default function WriteBlog() {
   };
 
   return (
-    <div className="bg-[#FAFAFA]">
-      <Nav />
-      <div className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
+    <div className="bg-[#FAFAFA] min-h-screen flex items-center justify-center">
+      <div className="max-w-2xl mx-auto p-6 bg-white rounded-md shadow-md">
         <form className="space-y-6">
           <h2 className="text-3xl font-bold mb-6">Write your Blog</h2>
           <div className="flex flex-col">

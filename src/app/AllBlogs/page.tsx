@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Train from "./Images/TrainImage.png";
+import Train from "@/components/Images/TrainImage.png";
 export default function AllBlogs() {
   return (
     <div className="bg-white min-h-screen flex flex-col justify-center">

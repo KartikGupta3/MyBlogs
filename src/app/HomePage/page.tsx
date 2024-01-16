@@ -1,5 +1,5 @@
 import Image from "next/image";
-export default function MainPage() {
+export default function HomePage() {
   return (
     <div className="bg-[#ffffff] p-12 flex flex-col gap-4">
       <div className="bg-[#ffffff] flex flex-col items-center justify-center">
