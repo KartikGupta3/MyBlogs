@@ -40,7 +40,7 @@ export default function WriteBlog() {
   };
 
   return (
-    <div className="bg-[#FAFAFA] min-h-screen flex items-center justify-center">
+    <div className="bg-[#FAFAFA] min-h-screen pt-12">
       <div className="max-w-2xl mx-auto p-6 bg-white rounded-md shadow-md">
         <form className="space-y-6">
           <h2 className="text-3xl font-bold mb-6">Write your Blog</h2>
