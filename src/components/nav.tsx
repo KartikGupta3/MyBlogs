@@ -1,6 +1,6 @@
 "use client";
 import React, { ReactNode, useState, useEffect } from "react";
-
+import Link from "next/link";
 interface NavItemProps {
   children: ReactNode;
 }
@@ -53,10 +53,18 @@ const Nav: React.FC = () => {
             isMenuOpen ? "flex" : "hidden"
           } md:flex gap-2 text-xs md:text-base gap-8`}
         >
-          <NavItem>Home</NavItem>
-          <NavItem>Blogs</NavItem>
-          <NavItem>Write</NavItem>
-          <NavItem>Login</NavItem>
+          <Link href="/HomePage">
+            <NavItem>Home</NavItem>
+          </Link>
+          <Link href="/Blogs">
+            <NavItem>Blogs</NavItem>
+          </Link>
+          <Link href="/Blogs/WriteBlog">
+            <NavItem>Write</NavItem>
+          </Link>
+          <Link href="/LogInPage">
+            <NavItem>Login</NavItem>
+          </Link>
         </ul>
         {isMenuOpen && (
           <div className="md:hidden fixed top-0 right-0 h-full w-2/3 bg-white z-[999]">
