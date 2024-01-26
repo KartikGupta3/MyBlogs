@@ -1,19 +1,32 @@
 "use client";
 import React, { ReactNode, useState, useEffect } from "react";
 import Link from "next/link";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebaseConfig.js";
+import { useRouter } from 'next/navigation';
 interface NavItemProps {
   children: ReactNode;
 }
 
 const Nav: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
+  const router = useRouter();
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      router.push("/LogInPage");
+      console.log("Logout clicked!");
+    } catch (error) {
+      console.error("Logout error", error);
+    }
   };
 
   useEffect(() => {
@@ -62,9 +75,9 @@ const Nav: React.FC = () => {
           <Link href="/Blogs/WriteBlog">
             <NavItem>Write</NavItem>
           </Link>
-          <Link href="/LogInPage">
-            <NavItem>Login</NavItem>
-          </Link>
+          <button onClick={handleLogout}>
+            <NavItem>Logout</NavItem>
+          </button>
         </ul>
         {isMenuOpen && (
           <div className="md:hidden fixed top-0 right-0 h-full w-2/3 bg-white z-[999]">
@@ -75,10 +88,18 @@ const Nav: React.FC = () => {
               ✕
             </button>
             <ul className="flex flex-col items-center justify-center h-full gap-6">
-              <NavItem>Home</NavItem>
-              <NavItem>Blogs</NavItem>
-              <NavItem>Write</NavItem>
-              <NavItem>Login</NavItem>
+              <Link href="/HomePage">
+                <NavItem>Home</NavItem>
+              </Link>
+              <Link href="/Blogs">
+                <NavItem>Blogs</NavItem>
+              </Link>
+              <Link href="/Blogs/WriteBlog">
+                <NavItem>Write</NavItem>
+              </Link>
+              <button onClick={handleLogout}>
+                <NavItem>Logout</NavItem>
+              </button>
             </ul>
           </div>
         )}

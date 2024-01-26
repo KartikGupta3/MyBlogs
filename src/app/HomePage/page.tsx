@@ -1,5 +1,15 @@
+"use client"
 import Image from "next/image";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useRouter } from 'next/navigation';
 export default function HomePage() {
+  const auth = getAuth();
+  const router = useRouter();
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      router.push("/LogInPage");
+    }
+  });
   return (
     <div className="bg-[#ffffff] p-12 flex flex-col gap-4">
       <div className="bg-[#ffffff] flex flex-col items-center justify-center">

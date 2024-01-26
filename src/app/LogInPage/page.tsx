@@ -1,12 +1,32 @@
+"use client"
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../../../firebase/firebaseConfig.js";
+import { useRouter } from 'next/navigation';
 export default function LogInPage() {
+  const router = useRouter();
+  const handleGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user);
+        router.push("/HomePage");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-200">
       <div className="w-full max-w-md p-6 space-y-8 bg-white rounded-md shadow-md">
         <h1 className="text-3xl font-bold font-serif text-center text-gray-800 mb-6">
           Login
         </h1>
-
-        <button className="w-full py-3 px-4 bg-white text-gray-800 rounded-md flex items-center justify-center space-x-2 border border-gray-300 focus:outline-none hover:shadow-md">
+        <button
+          className="w-full py-3 px-4 bg-white text-gray-800 rounded-md flex items-center justify-center space-x-2 border border-gray-300 focus:outline-none hover:shadow-md"
+          onClick={handleGoogle}
+        >
           <svg
             width="20"
             height="20"
